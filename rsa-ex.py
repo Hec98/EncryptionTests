@@ -28,6 +28,12 @@ message = "hello geeks"
 # encode to byte string before encryption 
 # with encode method
 encMessage = encrypt(message.encode('utf8'), publicKey)
+
+message = {
+    'enc': encMessage
+}
+
+print(message)
   
 print("original string: ", message)
 print("encrypted string: ", encMessage)
