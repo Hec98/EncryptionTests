@@ -29,13 +29,13 @@ message = "hello geeks"
 # with encode method
 encMessage = encrypt(message.encode('utf8'), publicKey)
 
-message = {
+encMessageJ = {
     'enc': encMessage
 }
 
-print(message)
+#print(message)
   
-print("original string: ", message)
+print("original string: ", encMessageJ['enc'])
 print("encrypted string: ", encMessage)
   
 # the encrypted message can be decrypted 
@@ -43,6 +43,6 @@ print("encrypted string: ", encMessage)
 # decrypt method returns encoded byte string,
 # use decode method to convert it to string
 # public key cannot be used for decryption
-decMessage = decrypt(encMessage, privateKey).decode('utf8')
+decMessage = decrypt(encMessageJ['enc'], privateKey).decode('utf8')
   
 print("decrypted string: ", decMessage)
